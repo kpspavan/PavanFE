@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Logo from "../components/logo";
+import Logo from '../components/Logo'
 import { useRouter } from "next/router";
 import {
   TwitterIcon,
@@ -32,7 +32,7 @@ function NavBar() {
     <header className="w-full px-32 py-8 font-medium flex items-center justify-between ">
       <nav>
         <CustomLink title="Home" className="mr-4" href="/" />
-        <CustomLink title="About" className="mx-4" href="/" />
+        <CustomLink title="About" className="mx-4" href="/about" />
         <CustomLink title="Projects" className="mx-4" href="/" />
       </nav>
       <nav className="flex items-center justify-center flex-wrap">

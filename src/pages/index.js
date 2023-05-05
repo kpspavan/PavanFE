@@ -5,6 +5,7 @@ import Image from "next/image";
 import IT from "../../public/images/profile/developer-pic-1.png";
 import AnimatedText from '../components/AnimatedText'
 import Link from "next/link";
+import HireMe from '../components/HireMe'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ Explore my latest projects and articles, showcasing my expertise in React.js and
             </div>
           </div>
         </Layout>
+        <HireMe  />
       </main>
     </>
   );
