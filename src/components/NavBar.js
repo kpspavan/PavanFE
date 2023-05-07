@@ -33,7 +33,7 @@ function NavBar() {
       <nav>
         <CustomLink title="Home" className="mr-4" href="/" />
         <CustomLink title="About" className="mx-4" href="/about" />
-        <CustomLink title="Projects" className="mx-4" href="/" />
+        <CustomLink title="Projects" className="mx-4" href="/projects" />
       </nav>
       <nav className="flex items-center justify-center flex-wrap">
         <motion.a
