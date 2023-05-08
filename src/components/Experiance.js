@@ -9,9 +9,9 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
     <Licon  reference={ref} />
       <motion.div initial={{y:50}} whileInView={{y:0}} transition={{duration:0.5,type:"spring" }}  >
         <h3 className="capitalize font-bold text-2xl" >
-          {position} &nbsp; <a target="_blank" className="text-prmary capitalize" href={companyLink}>@{company}</a>{" "}
+          {position} &nbsp; <a target="_blank" className="text-prmary capitalize dark:text-primaryDark " href={companyLink}>@{company}</a>{" "}
         </h3>
-        <span className="capitalize font-medium text-dark/75 " >
+        <span className="capitalize font-medium text-dark/75 dark:text-light/75 " >
           {time} | {address}
         </span>
         <p className="font-medium w-full" >{work}</p>
@@ -35,7 +35,7 @@ function Experiance() {
           Experiance
         </h2>
         <div ref={ref} className="w-[75%] m-auto relative ">
-        <motion.div style={{scaleY:scrollYProgress}}  className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top " />
+        <motion.div style={{scaleY:scrollYProgress}}  className=" dark:bg-light absolute left-9 top-0 w-[4px] h-full bg-dark origin-top " />
           <ul className="w-full flex flex-col items-start justify-between ml-4 " >
             <Details
               position="Software Engineer"

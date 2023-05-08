@@ -10,11 +10,11 @@ function Licon({reference}) {
         }
     )
   return (
-    <figure className='absolute left-0 stroke-dark  ' >
+    <figure className='absolute dark:stroke-light left-0 stroke-dark  ' >
         <svg className='-rotate-90' width="75" height="75" viewBox='0 0 100 100'>
-            <motion.circle cx="75" cy="50"  r="20" className='stroke-primary stroke-1 fill-none '  />
-            <motion.circle cx="75" cy="50"  r="20"  className=' stroke-[5px] fill-light ' style={{pathLength:scrollYProgress}}  />
-            <motion.circle cx="75" cy="50"  r="10"  className=' animate-pulse stroke-1 fill-primary '  />
+            <motion.circle cx="75" cy="50"  r="20" className='stroke-primary dark:stroke-primaryDark stroke-1 fill-none '  />
+            <motion.circle cx="75" cy="50"  r="20"  className=' stroke-[5px] dark:fill-dark fill-light ' style={{pathLength:scrollYProgress}}  />
+            <motion.circle cx="75" cy="50"  r="10"  className=' animate-pulse dark:fill-primaryDark stroke-1 fill-primary '  />
         </svg>
     </figure>
   )
