@@ -119,6 +119,7 @@ const about = () => {
           <Experience />
           <Education />
         </Layout>
+        
       </main>
     </>
   );

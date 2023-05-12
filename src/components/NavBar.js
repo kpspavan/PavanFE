@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import Logo from "./Logo";
 import { useRouter } from "next/router";
 import {
   TwitterIcon,
@@ -10,9 +9,12 @@ import {
   DribbbleIcon,
   SunIcon,
   MoonIcon,
+  DiscordIcon,
 } from "./icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
+import Tooltip from "@mui/material/Tooltip";
+import Button from "@mui/material/Button";
 
 // custom link for desktop
 const CustomLink = ({ href, title, className = "" }) => {
@@ -89,59 +91,48 @@ const Navbar = () => {
       </button>
 
       {/* desktop-view navbar */}
-      <div className="w-full flex justify-between items-center lg:hidden">
+      <motion.div initial={{x:-500,opacity:0,sclae:0.5}} transition={{duration:1.5}} animate={{x:0,opacity:1,scale:1}} className="w-full flex justify-between items-center lg:hidden">
         <nav>
           <CustomLink href="/" title="Home" className={"mr-4"} />
           <CustomLink href="/about" title="About" className={"mx-4"} />
           <CustomLink href="/projects" title="Projects" className={"mx-4"} />
-          <CustomLink href="/articles" title="Articles" className={"mx-4"} />
         </nav>
-        <nav className="flex items-center justify-center flex-wrap">
-          <motion.a
-            href="https://www.twitter.com"
-            target={"_blank"}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 mr-3"
-          >
-            <TwitterIcon />
-          </motion.a>
-          <motion.a
-            href="https://www.github.com"
-            target={"_blank"}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 mx-3"
-          >
-            <GithubIcon />
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com"
-            target={"_blank"}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 mx-3"
-          >
-            <LinkedInIcon />
-          </motion.a>
-          <motion.a
-            href="https://www.pinterest.com"
-            target={"_blank"}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 mx-3"
-          >
-            <PinterestIcon />
-          </motion.a>
-          <motion.a
-            href="https://www.dribbble.com"
-            target={"_blank"}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 ml-3"
-          >
-            <DribbbleIcon />
-          </motion.a>
+        <motion.div initial={{x:500,opacity:0,sclae:0.5}} transition={{duration:2}} animate={{x:0,opacity:1,scale:1}}  className="flex items-center justify-center flex-wrap">
+          <Tooltip arrow title={<h1 className="font-medium "  >Discord</h1>}>
+            <motion.a
+              href="https://discord.com/channels/@me/758994210941698059"
+              target={"_blank"}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-3"
+            >
+              <DiscordIcon />
+            </motion.a>
+          </Tooltip>
+
+          <Tooltip title={<h1 className="font-medium ">GitHub</h1>} arrow>
+            <motion.a
+              href="https://github.com/kpspavan"
+              target={"_blank"}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-3"
+            >
+              <GithubIcon />
+            </motion.a>
+          </Tooltip>
+          <Tooltip title={<h1 className="font-medium ">LinkedIn</h1>} arrow>
+            <motion.a
+              href="https://www.linkedin.com/in/kpspavan"
+              target={"_blank"}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-3"
+            >
+           
+              <LinkedInIcon />
+            </motion.a>
+          </Tooltip>
 
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -155,8 +146,8 @@ const Navbar = () => {
               <MoonIcon className={"fill-dark"} />
             )}
           </button>
-        </nav>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* mobile-view navbar */}
       {isOpen ? (
@@ -188,7 +179,6 @@ const Navbar = () => {
               className=""
               toggle={handleClickMenuButton}
             />
-            <CustomMobileLink href="/articles" title="Articles" className="" />
           </nav>
           <nav className="flex items-center justify-center flex-wrap mt-2">
             <motion.a
@@ -252,9 +242,6 @@ const Navbar = () => {
           </nav>
         </motion.div>
       ) : null}
-      <div className="absolute left-[50%] top-2 translate-x-[-50%]">
-        <Logo />
-      </div>
     </header>
   );
 };
