@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import LiIcon from './Licon'
-const Details = ({ type, time, place, info }) => {
+const Details = ({ type, time, place, info,college }) => {
   const ref = useRef(null);
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]"
+      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col justify-between md:w-[80%]"
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -14,6 +14,9 @@ const Details = ({ type, time, place, info }) => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
       >
+      <h2 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg" >
+        {college}
+      </h2>
         <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
           {type}
         </h3>
@@ -48,25 +51,25 @@ const Education = () => {
           />
           <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
             <Details
-              type="B.Tech in Computer Science"
-              time="2017-2021"
-              place="Government Engineering Collage, Bilaspur (CG)"
-              info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial 
-              Intelligence."
+            college="bhashyam public school"
+              type="10TH"
+              time="2014-2015"
+              place="Vijayawada"
+              info=""
             />
             <Details
-              type="B.Tech in Computer Science"
-              time="2017-2021"
-              place="Government Engineering Collage, Bilaspur (CG)"
-              info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial 
-              Intelligence."
+            college="sri chaitanya junior college"
+              type="Intermediate"
+              time="2015-2017"
+              place="Vijayawada"
+              info=""
             />
             <Details
+            college="Vel Tech Rangarajan Dr. Sagunthala R and D Institute of Science and Technology"
               type="B.Tech in Computer Science"
               time="2017-2021"
-              place="Government Engineering Collage, Bilaspur (CG)"
-              info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial 
-              Intelligence."
+              place="Chennai"
+              info="Computer Systems Engineering,"
             />
           </ul>
         </div>

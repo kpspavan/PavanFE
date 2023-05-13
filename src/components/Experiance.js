@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
-import LiIcon from './Licon'
+import LiIcon from "./Licon";
 
 const Details = ({ position, company, companyLink, time, address, work }) => {
   const ref = useRef(null);
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]"
+      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col justify-between md:w-[80%]"
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -56,44 +56,26 @@ const Experience = () => {
           />
           <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
             <Details
-              company="Google"
-              position="Software Engineer"
-              time="2022-Present"
-              address="Mountain View, CA"
-              companyLink="https://www.google.com"
-              work="Worked on a team responsible for developing new features for Google's 
-            search engine, including improving the accuracy and relevance of search results and 
-            developing new tools for data analysis and visualization."
+              company="NxtWave"
+              position="Trainee"
+              time="2021"
+              address="Guntur"
+              companyLink="https://www.ccbp.in/"
+              work="As a trainee learning the front end technologies "
             />
             <Details
-              company="Google"
-              position="Software Engineer"
-              time="2022-Present"
-              address="Mountain View, CA"
-              companyLink="https://www.google.com"
-              work="Worked on a team responsible for developing new features for Google's 
-            search engine, including improving the accuracy and relevance of search results and 
-            developing new tools for data analysis and visualization."
-            />
-            <Details
-              company="Google"
-              position="Software Engineer"
-              time="2022-Present"
-              address="Mountain View, CA"
-              companyLink="https://www.google.com"
-              work="Worked on a team responsible for developing new features for Google's 
-            search engine, including improving the accuracy and relevance of search results and 
-            developing new tools for data analysis and visualization."
-            />
-            <Details
-              company="Google"
-              position="Software Engineer"
-              time="2022-Present"
-              address="Mountain View, CA"
-              companyLink="https://www.google.com"
-              work="Worked on a team responsible for developing new features for Google's 
-            search engine, including improving the accuracy and relevance of search results and 
-            developing new tools for data analysis and visualization."
+              company="WIZ FREIGHT"
+              position="Front-End Developer"
+              time="2022-2023"
+              address="Chennai alwarpet menon eternity"
+              companyLink="https://wizfreight.com/"
+              work="Worked on a team responsible for developing new features for product 
+              Built highly functional web applications using
+              JavaScript, HTML, CSS,React.js and Next.js.And
+              working with multipel frameworks.Communicated with product managers and
+              UX designers to translate project requirements
+              and business objectives into polished user
+              interfaces."
             />
           </ul>
         </div>

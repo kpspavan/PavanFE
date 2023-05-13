@@ -4,14 +4,21 @@ import AnimatedText from "@/components/AnimatedText";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import Image from "next/image";
-import {GithubIcon} from '../components/icons'
-import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
+import { GithubIcon } from "../components/icons";
+// import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
+import project1 from '../../public/images/projects/home-lg-bg.png'
+
+import project2 from '../../public/images/projects/unnamed.jpg'
+import project3 from '../../public/images/projects/login_Empty.png'
+import project4 from '../../public/images/projects/Screenshot (1).png'
+
 import { motion } from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
 
 const FramerImage = motion(Image);
 
 const FeaturedProject = ({ type, title, summary, img, link, github }) => {
+  const jobbyapp="https://assets.ccbp.in/frontend/react-js/home-lg-bg.png"
   return (
     <article
       className="w-full flex items-center justify-between rounded-3xl shadow-2xl border border-solid border-dark bg-light p-12 
@@ -149,74 +156,66 @@ const projects = () => {
             <div className="col-span-12">
               <FeaturedProject
                 type="Feature Project"
-                title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-              It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-              local currency."
+                title="Tasty Kitchen ( ECommerce Clone)"
+                summary="implemented Tasty Kitchen application which is a clone for ECommerce applications like Amazon,
+                          Flipkart where users can log in and can see a list of products with search, filters, sort by, etc.
+                          Implemented Different pages and routes for Login, Products, Product details using React
+                          Router components Route, Switch, Link, props, state, lists, event handlers, form inputs.
+                          ° Authenticating and authorizing users by taking username, password and doing login
+                          POST HTTP API Call and implement filters by sending them as query parameters to
+                          product API calls.
+                          Persisted user login state by keeping jwt token in local storage, Sending it in headers of
+                          further API calls to authorize the user.
+                          Technologies used: React.js, JS, CSS, Bootstrap, Routing, REST API Calls, Local Storage, JWT
+                          Token, Authorization, Authentication"
                 img={project1}
-                link="/"
-                github="/"
+                link="https://pavain.ccbp.tech/login"
+                github="https://github.com/kpspavan/tastykitchen"
               />
             </div>
-            <div className="col-span-6 sm:col-span-12">
-              <Project
-                type="Feature Project"
-                title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-              It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-              local currency."
-                img={project1}
-                link="/"
-                github="/"
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              <Project
-                type="Feature Project"
-                title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-              It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-              local currency."
-                img={project1}
-                link="/"
-                github="/"
-              />
-            </div>
+           
+            
 
             <div className="col-span-12">
               <FeaturedProject
                 type="Feature Project"
-                title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-              It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-              local currency."
+                title="Naturos Tourism"
+                summary="In Naturos Tourism i build responsive webPage and cool animation effects
+Form validation using html and css only
+And also i used hover effects on images and navbar effects
+Technologies: HTML, CSS, SCSS"
                 img={project1}
-                link="/"
-                github="/"
+                link="https://github.com/kpspavan/Naturos"
+                github="https://github.com/kpspavan/Naturos"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
                 type="Feature Project"
-                title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-              It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-              local currency."
+                title="Jobby App"
+                summary="implemented Jobby  App application where users can log in and can see a list of jobs with search, filters, sort by, etc.
+                          Implemented Different pages and routes for Login.
+                          Router components Route, Switch, Link, props, state, lists, event handlers, form inputs.
+                          ° Authenticating and authorizing users by taking username, password and doing login
+                          POST HTTP API Call and implement filters by sending them as query parameters to
+                          product API calls.
+                          Persisted user login state by keeping jwt token in local storage, Sending it in headers of
+                          further API calls to authorize the user.
+                          Technologies used: React.js, JS, CSS, Bootstrap, Routing, REST API Calls, Local Storage, JWT
+                          Token, Authorization, Authentication"
                 img={project1}
-                link="/"
-                github="/"
+                link="https://github.com/kpspavan/jobbyapp1"
+                github="https://github.com/kpspavan/jobbyapp1"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
                 type="Feature Project"
-                title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-              It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-              local currency."
+                title="Ports Code"
+                summary="It collect the all ports and the data it will displayes in ui.and the implemented the pagination The technologoes we used HTML5,CSS3,Next.js MaterialUI."
                 img={project1}
-                link="/"
-                github="/"
+                link="https://frontendtask1-five.vercel.app/"
+                github="https://github.com/kpspavan/frontendtask1"
               />
             </div>
           </div>
