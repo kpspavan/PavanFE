@@ -1,6 +1,6 @@
 import Navbar from '../components/NavBar'
-import "@/styles/globals.css";
 import { AnimatePresence } from "framer-motion";
+import '../styles/globals.css';
 
 import { Montserrat } from "next/font/google";
 import { useRouter } from "next/router";

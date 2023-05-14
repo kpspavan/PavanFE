@@ -1,8 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef,useState,useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
 import LiIcon from "./Licon";
 
 const Details = ({ position, company, companyLink, time, address, work }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
   const ref = useRef(null);
   return (
     <li
@@ -14,15 +19,26 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
         initial={{ y: 50 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
+        
       >
-        <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
+      
+        <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg flex items-center ">
           {position}&nbsp;
           <a
             href={companyLink}
             target="_blank"
             className="capitalize text-primary dark:text-primaryDark"
           >
-            @{company}
+         {loaded && <span 
+          style={{
+            display: 'inline-block',
+            animation: 'auto-text 4s ease-in-out infinite',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+          }}
+           >
+           @{company}
+          </span>}
           </a>
         </h3>
         <span className="capitalize font-medium text-dark/50 dark:text-light/50 xs:text-sm">
@@ -36,6 +52,11 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
 
 const Experience = () => {
   const ref = useRef(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center start"],
@@ -43,9 +64,9 @@ const Experience = () => {
   return (
     <>
       <div className="my-64">
-        <h2 className="mb-32 text-center font-bold text-8xl w-full md:text-6xl xs:text-4xl md:bt-15">
+       { <h2 className="mb-32 text-center font-bold text-8xl w-full md:text-6xl xs:text-4xl md:bt-15">
           Experience
-        </h2>
+        </h2> }
         <div
           ref={ref}
           className="w-[75%] mx-auto relative lg:w-[90%] md:w-full"
@@ -79,6 +100,21 @@ const Experience = () => {
             />
           </ul>
         </div>
+        <style>
+        {`
+        @keyframes auto-text {
+          0% {
+            width: 0;
+          }
+          50% {
+            width: 100%;
+          }
+          100% {
+            width: 0;
+          }
+        }
+      `}
+      </style>
       </div>
     </>
   );

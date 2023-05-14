@@ -14,6 +14,7 @@ import project4 from '../../public/images/projects/Screenshot (1).png'
 
 import { motion } from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
+import ScrollIndicator from '../components/ScrollIndicator'
 
 const FramerImage = motion(Image);
 
@@ -145,6 +146,8 @@ const projects = () => {
         <title>Projects | Page </title>
         <meta name="description" content="any description" />
       </Head>
+      <ScrollIndicator />
+
       <TransitionEffect />
       <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
@@ -221,6 +224,7 @@ Technologies: HTML, CSS, SCSS"
           </div>
         </Layout>
       </main>
+      
     </>
   );
 };
