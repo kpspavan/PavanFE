@@ -5,6 +5,7 @@ import LiIcon from "./Licon";
 const Details = ({ position, company, companyLink, time, address, work }) => {
   const [loaded, setLoaded] = useState(false);
 
+
   useEffect(() => {
     setLoaded(true);
   }, []);

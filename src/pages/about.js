@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import AnimatedText from "../components/AnimatedText";
@@ -6,10 +6,10 @@ import profilePic from "../../public/images/profile/pavan.jpg";
 import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components/Skills";
-import Experience from '../components/Experiance'
+import Experience from "../components/Experiance";
 import Education from "../components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
-import ScrollIndicator from '../components/ScrollIndicator'
+import ScrollIndicator from "../components/ScrollIndicator";
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
@@ -35,21 +35,58 @@ const AnimatedNumber = ({ value }) => {
   );
 };
 
-const about = () => {
+const About = () => {
+  const companyName = "Passion Fuels Purpose! ";
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    let timeoutId;
+
+    const typewriterAnimation = () => {
+      const text = companyName.substring(0, currentIndex);
+      setDisplayText(text);
+
+      if (!isDeleting) {
+        setCurrentIndex((prevIndex) => prevIndex + 1);
+        if (currentIndex === companyName.length) {
+          setIsDeleting(true);
+          timeoutId = setTimeout(typewriterAnimation, 1000); // Adjust the delay before deleting if needed
+        } else {
+          timeoutId = setTimeout(typewriterAnimation, 100); // Adjust the delay between characters if needed
+        }
+      } else {
+        setCurrentIndex((prevIndex) => prevIndex - 1);
+        if (currentIndex === 0) {
+          setIsDeleting(false);
+          timeoutId = setTimeout(typewriterAnimation, 100); // Adjust the delay before starting again if needed
+        } else {
+          timeoutId = setTimeout(typewriterAnimation, 100); // Adjust the delay between deletions if needed
+        }
+      }
+    };
+
+    timeoutId = setTimeout(typewriterAnimation, 100); // Adjust the delay before starting the first cycle if needed
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [currentIndex, isDeleting]);
   return (
     <>
       <Head>
         <title>About | Page </title>
         <meta name="description" content="any description" />
       </Head>
-      <ScrollIndicator  />
+      <ScrollIndicator />
       <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
-          <AnimatedText
-            text="Passion Fuels Purpose! "
-            className="mb-16 md:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
-          />
+          <p className="mb-16 md:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8 w-full inline-block text-dark font-bold capitalize text-8xl dark:text-light ${className}  ">
+            {displayText}
+          </p>
+
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
             <div className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8   ">
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75 ">
@@ -121,13 +158,12 @@ const about = () => {
           <Experience />
           <Education />
         </Layout>
-        
       </main>
     </>
   );
 };
 
-export default about;
+export default About;
 // import Link from 'next/link';
 // import { useState } from 'react';
 // import { HomeIcon, UserIcon, FolderIcon } from '@heroicons/react/outline';
@@ -191,12 +227,3 @@ export default about;
 // };
 
 // export default Navbar;
-
-
-
-
-
-
-
-
-

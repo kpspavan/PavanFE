@@ -86,12 +86,7 @@ const ScrollIndicator = () => {
           You ve reached the bottom of the page!
         </Alert>
       </Snackbar>
-      <div>
-      hi iam here
-        <IconButton onClick={handleArrowUpClick}>
-          <KeyboardArrowUpIcon />
-        </IconButton>
-      </div>
+     
     </>
   );
 };

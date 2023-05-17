@@ -11,7 +11,7 @@ import HireMe from "@/components/HireMe";
 import lightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
 import TransitionEffect from "@/components/TransitionEffect";
 import React, { useEffect, useState } from 'react';
-
+import ChatBot from '../components/ChatBot'
 
 
 
@@ -71,6 +71,8 @@ export default function Home() {
             </div>
           </div>
         </Layout>
+        <ChatBot  />
+
         <HireMe />
        
       </main>
