@@ -36,43 +36,20 @@ const AnimatedNumber = ({ value }) => {
 };
 
 const About = () => {
-  const companyName = "Passion Fuels Purpose! ";
+  const text = "Passion Fuels Purpose! ";
   const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+ 
 
   useEffect(() => {
-    let timeoutId;
-
-    const typewriterAnimation = () => {
-      const text = companyName.substring(0, currentIndex);
-      setDisplayText(text);
-
-      if (!isDeleting) {
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-        if (currentIndex === companyName.length) {
-          setIsDeleting(true);
-          timeoutId = setTimeout(typewriterAnimation, 1000); // Adjust the delay before deleting if needed
-        } else {
-          timeoutId = setTimeout(typewriterAnimation, 100); // Adjust the delay between characters if needed
-        }
-      } else {
-        setCurrentIndex((prevIndex) => prevIndex - 1);
-        if (currentIndex === 0) {
-          setIsDeleting(false);
-          timeoutId = setTimeout(typewriterAnimation, 100); // Adjust the delay before starting again if needed
-        } else {
-          timeoutId = setTimeout(typewriterAnimation, 100); // Adjust the delay between deletions if needed
-        }
-      }
-    };
-
-    timeoutId = setTimeout(typewriterAnimation, 100); // Adjust the delay before starting the first cycle if needed
+    const interval = setInterval(() => {
+      const nextChar = text.charAt(displayText.length);
+      setDisplayText((prevText) => prevText + nextChar);
+    }, 300);
 
     return () => {
-      clearTimeout(timeoutId);
+      clearInterval(interval);
     };
-  }, [currentIndex, isDeleting]);
+  }, [displayText, text]);
   return (
     <>
       <Head>

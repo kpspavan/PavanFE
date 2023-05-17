@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
+import ChatBot from '../components/ChatBot'
 
 // custom link for desktop
 const CustomLink = ({ href, title, className = "" }) => {
@@ -92,10 +93,11 @@ const Navbar = () => {
 
       {/* desktop-view navbar */}
       <motion.div initial={{x:-500,opacity:0,sclae:0.5}} transition={{duration:1.5}} animate={{x:0,opacity:1,scale:1}} className="w-full flex justify-between items-center lg:hidden">
-        <nav>
+        <nav className="flex items-center" >
           <CustomLink href="/" title="Home" className={"mr-4"} />
           <CustomLink href="/about" title="About" className={"mx-4"} />
           <CustomLink href="/projects" title="Projects" className={"mx-4"} />
+          <ChatBot  />
         </nav>
         <motion.div initial={{x:500,opacity:0,sclae:0.5}} transition={{duration:2}} animate={{x:0,opacity:1,scale:1}}  className="flex items-center justify-center flex-wrap">
           <Tooltip arrow title={<h1 className="font-medium "  >Discord</h1>}>
