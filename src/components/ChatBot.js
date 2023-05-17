@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import {
   Button,
   Dialog,
@@ -9,12 +10,16 @@ import {
   Tooltip,
 } from "@mui/material";
 import { AiFillRobot } from "react-icons/ai";
+import Link from "next/link";
 
-const ChatBot = () => {
+const ChatBot = ({ onExperienceClick }) => {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [tooltipVisible, setTooltipVisible] = useState(true);
   const [animationInProgress, setAnimationInProgress] = useState(false);
+  const [showClickHere, setShowClickHere] = useState(false);
+
+  const router = useRouter();
 
   const handleOpen = () => {
     setOpen(true);
@@ -27,14 +32,14 @@ const ChatBot = () => {
     setTooltipVisible(true);
     setAnimationInProgress(false);
   };
-  
+
   const handleRoleClick = () => {
     setAnimationInProgress(true);
     setMessage(""); // Reset previous message
-  
+
     const roleText = "Front-end developer";
     let currentIndex = 0;
-  
+
     const typeWriter = setInterval(() => {
       setMessage((prevMessage) => {
         if (currentIndex === roleText.length) {
@@ -47,20 +52,21 @@ const ChatBot = () => {
       currentIndex++;
     }, 100);
   };
-  
+
   const handleAboutClick = () => {
     setAnimationInProgress(true);
     setMessage(""); // Reset previous message
-  
+
     const aboutText =
-      "I am a front-end developer with expertise in Next.js and Tailwind CSS.";
+      "I am a front-end developer with expertise in Next.js and Tailwind CSS.If u want to know more about me  ";
     let currentIndex = 0;
-  
+
     const typeWriter = setInterval(() => {
       setMessage((prevMessage) => {
         if (currentIndex === aboutText.length) {
           clearInterval(typeWriter);
           setAnimationInProgress(false);
+          setShowClickHere(true);
           return aboutText; // Return the entire text instead of appending it to the previous message
         }
         return aboutText.substring(0, currentIndex + 1); // Update the message with the current substring of the text
@@ -68,11 +74,18 @@ const ChatBot = () => {
       currentIndex++;
     }, 100);
   };
-  
-  
+
+  const handleExperienceClick = () => {
+    setOpen(false);
+    router.push("/about#experience");
+  };
 
   const handleHireClick = () => {
     window.location.href = "mailto:kpspavansrinivas@gmail.com";
+  };
+
+  const handelclickhere = () => {
+    setOpen(false);
   };
 
   useEffect(() => {
@@ -110,52 +123,63 @@ const ChatBot = () => {
           </div>
         </div>
       </Tooltip>
-      <div className="fixed left-4 bottom-4 flex items-center justify-center overflow-hidden md:right-8 md:top-0 md:bottom-auto md:left-auto md:absolute">
-        <div className="w-48 h-auto flex items-center justify-center relative md:w-24 ">
-          <Dialog
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="chatbot-dialog-title"
-          >
-            <DialogTitle id="chatbot-dialog-title">Chatbot</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                {message ? (
-                  <p className="text-gray-800">{message}</p>
-                ) : (
-                  <>
-                    <Button
-                      onClick={handleRoleClick}
-                      variant="outlined"
-                      color="primary"
-                    >
-                      Role
-                    </Button>
-                    <Button
-                      onClick={handleAboutClick}
-                      variant="outlined"
-                      color="primary"
-                    >
-                      Tell me about yourself
-                    </Button>
-                    <Button
-                      onClick={handleHireClick}
-                      variant="outlined"
-                      color="primary"
-                    >
-                      Hire me
-                    </Button>
-                  </>
-                )}
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleClose} color="primary">
-                Close
-              </Button>
-            </DialogActions>
-          </Dialog>
-        </div>
+      <div className="fixed left-4 bottom-4 flex items-center justify-center overflow-hidden md:right-8 md:top-0 md:bottom-auto md:h-96 md:rounded-xl md:shadow-2xl">
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="responsive-dialog-title"
+          fullWidth
+          maxWidth="sm"
+        >
+          <DialogTitle id="responsive-dialog-title">
+            {"Chat with the ChatBot"}
+          </DialogTitle>
+          <DialogContent dividers>
+            <DialogContentText>
+              {message}
+              {showClickHere && (
+                <Link onClick={handelclickhere} href="/about">
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    CLick Here
+                  </button>
+                </Link>
+              )}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={handleRoleClick}
+              color="primary"
+              disabled={animationInProgress}
+            >
+              Role
+            </Button>
+            <Button
+              onClick={handleAboutClick}
+              color="primary"
+              disabled={animationInProgress}
+            >
+              About
+            </Button>
+            <Button
+              onClick={handleExperienceClick}
+              color="primary"
+              disabled={animationInProgress}
+            >
+              Experience
+            </Button>
+            <Button
+              onClick={handleHireClick}
+              color="primary"
+              disabled={animationInProgress}
+            >
+              Hire
+            </Button>
+            <Button onClick={handleClose} color="primary" autoFocus>
+              Close
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     </>
   );

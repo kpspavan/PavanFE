@@ -64,7 +64,7 @@ const Experience = () => {
   });
   return (
     <>
-      <div className="my-64">
+      <div className="my-64" id="experience">
        { <h2 className="mb-32 text-center font-bold text-8xl w-full md:text-6xl xs:text-4xl md:bt-15">
           Experience
         </h2> }
