@@ -76,8 +76,15 @@ const ChatBot = ({ onExperienceClick }) => {
   };
 
   const handleExperienceClick = () => {
-    setOpen(false);
-    router.push("/about#experience");
+    setShowClickHere(false);
+    setMessage("Redirecting to experiance section....");
+  
+    setTimeout(() => {
+      router.push("/about#experience");
+      setOpen(false);
+      setMessage("")
+
+    }, 2000);
   };
 
   const handleHireClick = () => {
@@ -86,6 +93,7 @@ const ChatBot = ({ onExperienceClick }) => {
 
   const handelclickhere = () => {
     setOpen(false);
+    setShowClickHere(false);
   };
 
   useEffect(() => {
@@ -147,6 +155,11 @@ const ChatBot = ({ onExperienceClick }) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
+          <Button
+            
+            >
+              Complete Text
+            </Button>
             <Button
               onClick={handleRoleClick}
               color="primary"
