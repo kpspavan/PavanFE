@@ -11,6 +11,7 @@ import Education from "../components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
 import ScrollIndicator from "../components/ScrollIndicator";
 import { useRouter } from "next/router";
+import ContactForm from '../components/ContactForm'
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
@@ -155,6 +156,8 @@ const About = () => {
           <Education />
         </Layout>
       </main>
+      <ContactForm  />
+
     </>
   );
 };

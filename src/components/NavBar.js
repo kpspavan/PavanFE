@@ -64,6 +64,7 @@ const Navbar = () => {
   const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
 
+
   const handleClickMenuButton = () => {
     setIsOpen(!isOpen);
   };
@@ -97,7 +98,6 @@ const Navbar = () => {
           <CustomLink href="/" title="Home" className={"mr-4"} />
           <CustomLink href="/about" title="About" className={"mx-4"} />
           <CustomLink href="/projects" title="Projects" className={"mx-4"} />
-          <CustomLink href="/contactme" title="Contact me" className={"mx-4"} />
 
         </nav>
         <motion.div initial={{x:500,opacity:0,sclae:0.5}} transition={{duration:2}} animate={{x:0,opacity:1,scale:1}}  className="flex items-center justify-center flex-wrap">

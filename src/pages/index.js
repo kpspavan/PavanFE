@@ -10,8 +10,7 @@ import { LinkArrow } from "@/components/icons";
 import lightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
 import TransitionEffect from "@/components/TransitionEffect";
 import React, { useEffect, useState } from 'react';
-import ContactForm from '../components/HireMe'
-
+import ContactForm from '../components/ContactForm'
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -67,8 +66,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <ContactForm />
         </Layout>
+        <ContactForm  />
+
       </main>
     </>
   );

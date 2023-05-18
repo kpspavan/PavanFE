@@ -15,6 +15,8 @@ import project4 from '../../public/images/projects/Screenshot (1).png'
 import { motion } from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
 import ScrollIndicator from '../components/ScrollIndicator'
+import ContactForm from '../components/ContactForm'
+
 
 const FramerImage = motion(Image);
 
@@ -223,6 +225,7 @@ Technologies: HTML, CSS, SCSS"
             </div>
           </div>
         </Layout>
+        <ContactForm  />
       </main>
       
     </>
