@@ -58,7 +58,7 @@ const ChatBot = ({ onExperienceClick }) => {
     setMessage(""); // Reset previous message
 
     const aboutText =
-      "I am a front-end developer with expertise in Next.js and Tailwind CSS.If u want to know more about me  ";
+      "I am a front-end developer with expertise in Next.js and Tailwind CSS. If you want to know more about me...";
     let currentIndex = 0;
 
     const typeWriter = setInterval(() => {
@@ -77,20 +77,27 @@ const ChatBot = ({ onExperienceClick }) => {
 
   const handleExperienceClick = () => {
     setShowClickHere(false);
-    setMessage("Redirecting to experiance section....");
-  
+    setMessage("Redirecting to experience section....");
+
     setTimeout(() => {
       router.push("/about#experience");
       setOpen(false);
-      setMessage("")
-
+      setMessage("");
     }, 2000);
   };
 
   const handleHireClick = () => {
-    window.location.href = "mailto:kpspavansrinivas@gmail.com";
+    const email = "kpspavansrinivas@gmail.com";
+    const subject = "Hiring Inquiry";
+    const body = "Hello, I'm interested in hiring you for a project.";
+  
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  
+    window.location.href = mailtoUrl;
   };
-
+  
   const handelclickhere = () => {
     setOpen(false);
     setShowClickHere(false);
@@ -148,18 +155,14 @@ const ChatBot = ({ onExperienceClick }) => {
               {showClickHere && (
                 <Link onClick={handelclickhere} href="/about">
                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                    CLick Here
+                    Click Here
                   </button>
                 </Link>
               )}
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-          <Button
-            
-            >
-              Complete Text
-            </Button>
+            <Button>Complete Text</Button>
             <Button
               onClick={handleRoleClick}
               color="primary"
