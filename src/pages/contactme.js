@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TransitionEffect from '../components/TransitionEffect'
 import axios from "axios";
 
 const HireForm = () => {
@@ -32,6 +33,8 @@ const HireForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+          <TransitionEffect />
+
       <input
         type="text"
         placeholder="Name"
