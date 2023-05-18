@@ -7,10 +7,10 @@ import profilePic from "../../public/images/profile/developer-pic-1.png";
 import AnimatedText from "@/components/AnimatedText";
 import Link from "next/link";
 import { LinkArrow } from "@/components/icons";
-import HireMe from "@/components/HireMe";
 import lightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
 import TransitionEffect from "@/components/TransitionEffect";
 import React, { useEffect, useState } from 'react';
+import ContactForm from '../components/HireMe'
 
 
 
@@ -47,7 +47,7 @@ export default function Home() {
                 className="!text-3xl !text-left xl:!text-3xl lg:!text-center lg:!text-3xl md:!text-3xl sm:!text-3xl"
               />
               <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
-                As a  front-End developer, I am dedicated to turning
+                As a front-End developer, I am dedicated to turning
                 ideas into innovative web applications. Explore my latest
                 projects and articles, showcasing my expertise in React.js and
                 web development.
@@ -64,10 +64,10 @@ export default function Home() {
                 >
                   Resume <LinkArrow className={"w-6 ml-1"} />
                 </Link>
-                
               </div>
             </div>
           </div>
+          <ContactForm />
         </Layout>
       </main>
     </>
