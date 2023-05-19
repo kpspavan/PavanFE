@@ -162,7 +162,6 @@ const ChatBot = ({ onExperienceClick }) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button>Complete Text</Button>
             <Button
               onClick={handleRoleClick}
               color="primary"

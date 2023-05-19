@@ -11,7 +11,7 @@ import Education from "../components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
 import ScrollIndicator from "../components/ScrollIndicator";
 import { useRouter } from "next/router";
-import ContactForm from '../components/ContactForm'
+import ContactForm from "../components/ContactForm";
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
@@ -78,7 +78,9 @@ const About = () => {
 
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
-          <p className={`mb-16 md:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8 w-full inline-block text-dark font-bold capitalize text-8xl dark:text-light`}>
+          <p
+            className={`mb-16 md:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8 w-full inline-block text-dark font-bold capitalize text-8xl dark:text-light`}
+          >
             {displayText}
           </p>
 
@@ -149,6 +151,7 @@ const About = () => {
               </div>
             </div>
           </div>
+         
           <Skills />
           <div>
             <Experience />
@@ -156,8 +159,7 @@ const About = () => {
           <Education />
         </Layout>
       </main>
-      <ContactForm  />
-
+      <ContactForm />
     </>
   );
 };

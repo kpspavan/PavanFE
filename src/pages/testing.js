@@ -7,7 +7,7 @@ import nextjs from "../../public/images/skillimages/th.jpg";
 import tailwindcss from "../../public/images/skillimages/wind.png";
 import Image from "next/image";
 
-const Skills = () => {
+const Testing = () => {
   const tech = [
     { id: 1, src: html, title: "HTML", style: "shadow-orange-300" },
     { id: 2, src: css, title: "CSS", style: "shadow-blue-300" },
@@ -28,9 +28,9 @@ const Skills = () => {
   };
 
   return (
-    <div name="experience" className=" py-8">
+    <div name="experience" className="bg-gradient-to-b from-gray-800 to-black min-h-screen py-8">
       <div className="max-w-screen-lg mx-auto p-4 text-white">
-        <h1 className="text-4xl text-black font-bold border-b-4 flex justify-center border-gray-500 mb-6">Skills</h1>
+        <h1 className="text-4xl font-bold border-b-4 border-gray-500 mb-6">Skills</h1>
         <p className="text-center text-lg mb-12">These are the technologies I have worked with</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
           {tech.map(({ id, src, title, style }) => {
@@ -60,4 +60,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Testing;
