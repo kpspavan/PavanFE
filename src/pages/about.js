@@ -12,6 +12,7 @@ import TransitionEffect from "@/components/TransitionEffect";
 import ScrollIndicator from "../components/ScrollIndicator";
 import { useRouter } from "next/router";
 import ContactForm from "../components/ContactForm";
+import Tools from '../components/Tools'
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
@@ -124,15 +125,15 @@ const About = () => {
             <div className="col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3">
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumber value={50} />+
+                  <AnimatedNumber value={4} />+
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs-text-sm">
-                  satisfied clients
+                  Features
                 </h2>
               </div>
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumber value={10} />+
+                  <AnimatedNumber value={5} />+
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs-text-sm">
                   Projects completed
@@ -153,6 +154,7 @@ const About = () => {
           </div>
          
           <Skills />
+          <Tools  />
           <div>
             <Experience />
           </div>

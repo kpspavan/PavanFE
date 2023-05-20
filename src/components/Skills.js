@@ -3,18 +3,34 @@ import html from "../../public/images/skillimages/html-5 (1).png";
 import css from "../../public/images/skillimages/css-3.png";
 import javascript from "../../public/images/skillimages/js.png";
 import reactjs from "../../public/images/skillimages/physics.png";
-import nextjs from "../../public/images/skillimages/th.jpg";
-import tailwindcss from "../../public/images/skillimages/wind.png";
+import nextjs from "../../public/images/skillimages/next-js_1.svg";
+import tailwindcss from "../../public/images/skillimages/th.jpg";
+import chakra from "../../public/images/skillimages/th (5).jpg";
+import materailui from "../../public/images/skillimages/th (6).jpg";
+import Docker from "../../public/images/skillimages/th (7).jpg";
+import RactHookForm from "../../public/images/skillimages/react-hook-form.jpeg";
+
+
+
+
 import Image from "next/image";
 
 const Skills = () => {
   const tech = [
-    { id: 1, src: html, title: "HTML", style: "shadow-orange-300" },
-    { id: 2, src: css, title: "CSS", style: "shadow-blue-300" },
+    { id: 1, src: html, title: "HTML5", style: "shadow-orange-300" },
+    { id: 2, src: css, title: "CSS3", style: "shadow-blue-300" },
     { id: 3, src: javascript, title: "JavaScript", style: "shadow-orange-300" },
     { id: 4, src: reactjs, title: "React", style: "shadow-blue-300" },
     { id: 5, src: tailwindcss, title: "Tailwind", style: "shadow-sky-300" },
     { id: 6, src: nextjs, title: "Next.js", style: "shadow-red-500" },
+    { id: 7, src: chakra, title: "ChakraUI", style: "shadow-blue-500" },
+    { id: 8, src: materailui, title: "MaterailUI", style: "shadow-blue-500" },
+    { id: 9, src: Docker, title: "Docker", style: "shadow-blue-500" },
+    { id: 10, src: RactHookForm, title: "ReactHookForm", style: "shadow-blue-500" },
+
+
+
+
   ];
 
   const [hoveredSkill, setHoveredSkill] = useState(null);
