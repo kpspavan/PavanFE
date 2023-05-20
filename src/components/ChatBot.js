@@ -86,18 +86,6 @@ const ChatBot = ({ onExperienceClick }) => {
     }, 2000);
   };
 
-  const handleHireClick = () => {
-    const email = "kpspavansrinivas@gmail.com";
-    const subject = "Hiring Inquiry";
-    const body = "Hello, I'm interested in hiring you for a project.";
-  
-    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-  
-    window.location.href = mailtoUrl;
-  };
-  
   const handelclickhere = () => {
     setOpen(false);
     setShowClickHere(false);
@@ -183,13 +171,7 @@ const ChatBot = ({ onExperienceClick }) => {
             >
               Experience
             </Button>
-            <Button
-              onClick={handleHireClick}
-              color="primary"
-              disabled={animationInProgress}
-            >
-              Hire
-            </Button>
+
             <Button onClick={handleClose} color="primary" autoFocus>
               Close
             </Button>
