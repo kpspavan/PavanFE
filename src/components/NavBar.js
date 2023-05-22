@@ -98,10 +98,11 @@ const Navbar = () => {
           <CustomLink href="/" title="Home" className={"mr-4"} />
           <CustomLink href="/about" title="About" className={"mx-4"} />
           <CustomLink href="/projects" title="Projects" className={"mx-4"} />
+          <Chatbot  />
+
 
         </nav>
         <motion.div initial={{x:500,opacity:0,sclae:0.5}} transition={{duration:2}} animate={{x:0,opacity:1,scale:1}}  className="flex items-center justify-center flex-wrap">
-        <Chatbot  />
           <Tooltip arrow title={<h1 className="font-medium "  >Discord</h1>}>
             <motion.a
               href="https://discord.com/channels/@me/758994210941698059"

@@ -12,7 +12,7 @@ import TransitionEffect from "@/components/TransitionEffect";
 import ScrollIndicator from "../components/ScrollIndicator";
 import { useRouter } from "next/router";
 import ContactForm from "../components/ContactForm";
-import Tools from '../components/Tools'
+import Tools from "../components/Tools";
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
@@ -44,7 +44,7 @@ const AnimatedNumber = ({ value }) => {
 const About = () => {
   const router = useRouter();
 
-  const text = "Passion Fuels Purpose! ";
+  const text = "It always seems impossible until it's done. ";
   const [displayText, setDisplayText] = useState("");
   const experienceRef = useRef(null);
 
@@ -52,6 +52,15 @@ const About = () => {
     if (router.asPath.includes("#experience")) {
       setTimeout(() => {
         const experienceElement = document.getElementById("experience");
+        experienceElement.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  }, [router.asPath]);
+
+  useEffect(() => {
+    if (router.asPath.includes("#skills")) {
+      setTimeout(() => {
+        const experienceElement = document.getElementById("skills");
         experienceElement.scrollIntoView({ behavior: "smooth" });
       }, 0);
     }
@@ -80,7 +89,7 @@ const About = () => {
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
           <p
-            className={`mb-16 md:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8 w-full inline-block text-dark font-bold capitalize text-8xl dark:text-light`}
+            className={`mb-12 md:!text-4xl sm:!text-3xl xs:!text-2xl sm:mb-8 w-full   text-dark font-bold capitalize text-4xl flex items-center justify-center dark:text-light`}
           >
             {displayText}
           </p>
@@ -111,7 +120,7 @@ const About = () => {
               </p>
             </div>
             <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8">
-              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
+              {/* <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" /> */}
               <Image
                 src={profilePic}
                 alt="profile_img"
@@ -152,9 +161,9 @@ const About = () => {
               </div>
             </div>
           </div>
-         
+
           <Skills />
-          <Tools  />
+          <Tools />
           <div>
             <Experience />
           </div>

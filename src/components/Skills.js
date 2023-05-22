@@ -44,11 +44,11 @@ const Skills = () => {
   };
 
   return (
-    <div name="experience" className=" py-8">
+    <div name="experience" className=" py-8"  >
       <div className="max-w-screen-lg mx-auto p-4 text-white">
-        <h1 className="text-4xl text-black font-bold border-b-4 flex justify-center border-gray-500 mb-6">Skills</h1>
+        <h1 className="text-4xl text-black font-bold border-b-4 flex justify-center border-gray-500 mb-6 dark:text-light ">Skills</h1>
         <p className="text-center text-lg mb-12">These are the technologies I have worked with</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8" id="skills"  >
           {tech.map(({ id, src, title, style }) => {
             const isHovered = hoveredSkill === title;
 

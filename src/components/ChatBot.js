@@ -58,7 +58,7 @@ const ChatBot = ({ onExperienceClick }) => {
     setMessage(""); // Reset previous message
 
     const aboutText =
-      "I am a front-end developer with expertise in Next.js and Tailwind CSS. If you want to know more about me...";
+      "I am a front-end developer with expertise in React.js and CSS frameworks. If you want to know more about me...";
     let currentIndex = 0;
 
     const typeWriter = setInterval(() => {
@@ -81,6 +81,16 @@ const ChatBot = ({ onExperienceClick }) => {
 
     setTimeout(() => {
       router.push("/about#experience");
+      setOpen(false);
+      setMessage("");
+    }, 2000);
+  };
+
+  const handleSkillsClick = () => {
+    setShowClickHere(false);
+    setMessage("Redirecting to Skills section....");
+    setTimeout(() => {
+      router.push("/about#skills");
       setOpen(false);
       setMessage("");
     }, 2000);
@@ -135,7 +145,7 @@ const ChatBot = ({ onExperienceClick }) => {
           maxWidth="sm"
         >
           <DialogTitle id="responsive-dialog-title">
-            {"Chat with the ChatBot"}
+            {"Auto Text And Redirection Bot"}
           </DialogTitle>
           <DialogContent dividers>
             <DialogContentText>
@@ -170,6 +180,13 @@ const ChatBot = ({ onExperienceClick }) => {
               disabled={animationInProgress}
             >
               Experience
+            </Button>
+            <Button
+              onClick={handleSkillsClick}
+              color="primary"
+              disabled={animationInProgress}
+            >
+              skills
             </Button>
 
             <Button onClick={handleClose} color="primary" autoFocus>
