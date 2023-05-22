@@ -13,8 +13,6 @@ import {
 } from "./icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
-import Tooltip from "@mui/material/Tooltip";
-import Button from "@mui/material/Button";
 import Chatbot from '../components/ChatBot'
 
 // custom link for desktop
@@ -102,7 +100,6 @@ const Navbar = () => {
 
         </nav>
         <motion.div initial={{x:500,opacity:0,sclae:0.5}} transition={{duration:2}} animate={{x:0,opacity:1,scale:1}}  className="flex items-center justify-center flex-wrap">
-          <Tooltip arrow title={<h1 className="font-medium "  >Discord</h1>}>
             <motion.a
               href="https://discord.com/channels/@me/758994210941698059"
               target={"_blank"}
@@ -112,9 +109,7 @@ const Navbar = () => {
             >
               <DiscordIcon />
             </motion.a>
-          </Tooltip>
 
-          <Tooltip title={<h1 className="font-medium ">GitHub</h1>} arrow>
             <motion.a
               href="https://github.com/kpspavan"
               target={"_blank"}
@@ -124,8 +119,6 @@ const Navbar = () => {
             >
               <GithubIcon />
             </motion.a>
-          </Tooltip>
-          <Tooltip title={<h1 className="font-medium ">LinkedIn</h1>} arrow>
             <motion.a
               href="https://www.linkedin.com/in/kpspavan"
               target={"_blank"}
@@ -136,7 +129,6 @@ const Navbar = () => {
            
               <LinkedInIcon />
             </motion.a>
-          </Tooltip>
 
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}

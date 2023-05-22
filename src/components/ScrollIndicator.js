@@ -1,16 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
 import { useTheme } from 'next-themes';
-import { IconButton } from '@material-ui/core';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 
 
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+
 
 const ScrollIndicator = () => {
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -77,15 +71,7 @@ const ScrollIndicator = () => {
           )}
         </motion.div>
       </div>
-      <Snackbar
-        open={showSnackbar}
-        autoHideDuration={1000}
-        onClose={handleCloseSnackbar}
-      >
-        <Alert onClose={handleCloseSnackbar} severity="error">
-          You ve reached the bottom of the page!
-        </Alert>
-      </Snackbar>
+     
      
     </>
   );
