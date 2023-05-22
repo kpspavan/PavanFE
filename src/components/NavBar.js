@@ -246,9 +246,7 @@ const Navbar = () => {
           </nav>
         </motion.div>
       ) : null}
-      <div className="absolute left-[50%] top-2 translate-x-[-50%]  md:translate-x-[-50%] md:right-8 md:top-0 md:bottom-auto md:left-auto md:absolute lg:left-[90%] ">
         <Chatbot />
-      </div>
     </header>
   );
 };
