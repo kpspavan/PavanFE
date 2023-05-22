@@ -48,6 +48,9 @@ const About = () => {
   const [displayText, setDisplayText] = useState("");
   const experienceRef = useRef(null);
 
+  
+
+
   useEffect(() => {
     if (router.asPath.includes("#experience")) {
       setTimeout(() => {
@@ -70,7 +73,7 @@ const About = () => {
     const interval = setInterval(() => {
       const nextChar = text.charAt(displayText.length);
       setDisplayText((prevText) => prevText + nextChar);
-    }, 300);
+    }, 100);
 
     return () => {
       clearInterval(interval);
@@ -100,15 +103,15 @@ const About = () => {
                 Biography
               </h2>
               <p className="font-medium ">
-                Hi, Im CodeBucks, a web developer and UI/UX designer with a
+                Hi, Im Pavan Srinivas.K, a Front End Developer  with a
                 passion for creating beautiful, functional, and user-centered
-                digital experiences. With 4 years of experience in the field, I
+                digital experiences. With 1 years of experience in the field, I
                 am always looking for new and innovative ways to bring my
                 clients visions to life.
               </p>
               <p className="font-medium my-4">
                 I believe that design is about more than just making things look
-                pretty; its about solving problems and creating intuitive,
+                pretty; creating intuitive,
                 enjoyable experiences for users.
               </p>
               <p className="font-medium">
@@ -142,7 +145,7 @@ const About = () => {
               </div>
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumber value={5} />+
+                  <AnimatedNumber value={4} />+
                 </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs-text-sm">
                   Projects completed
@@ -150,7 +153,7 @@ const About = () => {
               </div>
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumber value={1} />+
+                  <AnimatedNumber value={1} />
                 </span>
                 <h2
                   ref={experienceRef}

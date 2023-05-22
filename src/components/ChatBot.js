@@ -58,7 +58,7 @@ const ChatBot = ({ onExperienceClick }) => {
     setMessage(""); // Reset previous message
 
     const aboutText =
-      "I am a front-end developer with expertise in React.js and CSS frameworks. If you want to know more about me...";
+      "I am a front-end developer with expertise in React.js . If you want to know more about me...";
     let currentIndex = 0;
 
     const typeWriter = setInterval(() => {

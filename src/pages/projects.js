@@ -5,12 +5,8 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon } from "../components/icons";
-// import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
 import project1 from '../../public/images/projects/home-lg-bg.png'
 
-import project2 from '../../public/images/projects/unnamed.jpg'
-import project3 from '../../public/images/projects/login_Empty.png'
-import project4 from '../../public/images/projects/Screenshot (1).png'
 
 import { motion } from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
