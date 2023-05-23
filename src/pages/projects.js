@@ -16,7 +16,7 @@ import ContactForm from '../components/ContactForm'
 
 const FramerImage = motion(Image);
 
-const FeaturedProject = ({ type, title, summary, img, link, github }) => {
+const FeaturedProject = ({  title, summary, img, link, github }) => {
   const jobbyapp="https://assets.ccbp.in/frontend/react-js/home-lg-bg.png"
   return (
     <article
@@ -46,9 +46,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
       </Link>
 
       <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
-        <span className="font-medium text-xl text-primary dark:text-primaryDark xs:text-base">
-          {type}
-        </span>
+        
         <Link
           href={link}
           rget={"_blank"}
@@ -80,7 +78,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   );
 };
 
-const Project = ({ title, type, img, link, github }) => {
+const Project = ({ title,  img, link, github }) => {
   return (
     <article
       className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative 
@@ -107,9 +105,7 @@ const Project = ({ title, type, img, link, github }) => {
       </Link>
 
       <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="font-medium text-xl text-primary dark:text-primaryDark lg:text-lg md:text-base">
-          {type}
-        </span>
+       
         <Link
           href={link}
           rget={"_blank"}
@@ -156,7 +152,6 @@ const projects = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
             <div className="col-span-12">
               <FeaturedProject
-                type="Feature Project"
                 title="Tasty Kitchen ( ECommerce Clone)"
                 summary="implemented Tasty Kitchen application which is a clone for ECommerce applications like Amazon,
                           Flipkart where users can log in and can see a list of products with search, filters, sort by, etc.
@@ -179,7 +174,6 @@ const projects = () => {
 
             <div className="col-span-12">
               <FeaturedProject
-                type="Feature Project"
                 title="Naturos Tourism"
                 summary="In Naturos Tourism i build responsive webPage and cool animation effects
 Form validation using html and css only
@@ -192,7 +186,6 @@ Technologies: HTML, CSS, SCSS"
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Feature Project"
                 title="Jobby App"
                 summary="implemented Jobby  App application where users can log in and can see a list of jobs with search, filters, sort by, etc.
                           Implemented Different pages and routes for Login.
@@ -211,7 +204,6 @@ Technologies: HTML, CSS, SCSS"
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Feature Project"
                 title="Ports Code"
                 summary="It collect the all ports and the data it will displayes in ui.and the implemented the pagination The technologoes we used HTML5,CSS3,Next.js MaterialUI."
                 img={project1}

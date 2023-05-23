@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import html from "../../public/images/skillimages/html-5 (1).png";
+import html from "../../public/images/skillimages/icons8-html-5-144.png";
 import css from "../../public/images/skillimages/css-3.png";
 import javascript from "../../public/images/skillimages/js.png";
 import reactjs from "../../public/images/skillimages/physics.png";
 import nextjs from "../../public/images/skillimages/next-js_1.svg";
 import tailwindcss from "../../public/images/skillimages/th.jpg";
-import chakra from "../../public/images/skillimages/th (5).jpg";
-import materailui from "../../public/images/skillimages/th (6).jpg";
-import Docker from "../../public/images/skillimages/th (7).jpg";
+import chakra from "../../public/images/skillimages/icons8-chakra-ui-144.png";
+import materailui from "../../public/images/skillimages/icons8-material-ui-144.png";
+import Docker from "../../public/images/skillimages/icons8-docker-144.png";
 import RactHookForm from "../../public/images/skillimages/react-hook-form.jpeg";
 
 

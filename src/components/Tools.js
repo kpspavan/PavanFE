@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import github from "../../public/images/skillimages/th (2).jpg";
+import github from "../../public/images/skillimages/icons8-github-150.png";
 import gitlab from "../../public/images/skillimages/gitlab-logo.png";
-import jira from "../../public/images/skillimages/th (4).jpg";
-import vscode from "../../public/images/skillimages/th (3).jpg";
+import jira from "../../public/images/skillimages/icons8-jira-144.png";
+import vscode from "../../public/images/skillimages/icons8-visual-studio-code-2019-144.png";
 import Image from "next/image";
 
 const Tools = () => {
