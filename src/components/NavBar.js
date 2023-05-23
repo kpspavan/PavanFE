@@ -178,16 +178,16 @@ const Navbar = () => {
           </nav>
           <nav className="flex items-center justify-center flex-wrap mt-2">
             <motion.a
-              href="https://www.twitter.com"
+              href="https://discord.com/channels/@me/758994210941698059"
               target={"_blank"}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.9 }}
               className="w-6 mr-3 sm:mx-1"
             >
-              <TwitterIcon />
+              <DiscordIcon />
             </motion.a>
             <motion.a
-              href="https://www.github.com"
+              href="https://github.com/kpspavan"
               target={"_blank"}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.9 }}
@@ -196,7 +196,7 @@ const Navbar = () => {
               <GithubIcon />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/kpspavan"
               target={"_blank"}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.9 }}
@@ -204,24 +204,8 @@ const Navbar = () => {
             >
               <LinkedInIcon />
             </motion.a>
-            <motion.a
-              href="https://www.pinterest.com"
-              target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-6 mx-3 bg-light rounded-full sm:mx-1"
-            >
-              <PinterestIcon />
-            </motion.a>
-            <motion.a
-              href="https://www.dribbble.com"
-              target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-6 ml-3 sm:mx-1"
-            >
-              <DribbbleIcon />
-            </motion.a>
+          
+           
 
             <button
               onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -238,7 +222,9 @@ const Navbar = () => {
           </nav>
         </motion.div>
       ) : null}
-        <Chatbot />
+      <div className="absolute  left-[50%] top-2 translate-x-[-50%]  lg:right-8 lg:top-0 lg:bottom-auto lg:hidden md:hidden sm:hidden  lg:absolute  lg:left-[94%]   ">
+      <Chatbot />
+      </div>
     </header>
   );
 };

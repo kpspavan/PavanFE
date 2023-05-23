@@ -1,4 +1,4 @@
-import React, { useState,useRef , useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import { AiFillRobot } from "react-icons/ai";
 import Link from "next/link";
@@ -12,7 +12,6 @@ const ChatBot = ({ onExperienceClick }) => {
 
   const router = useRouter();
   const chatRef = useRef(null); // Reference to the chat window
-
 
   const handleOpen = () => {
     setOpen(true);
@@ -99,30 +98,30 @@ const ChatBot = ({ onExperienceClick }) => {
         handleClose();
       }
     };
-  
+
     const handleEscapeKey = (event) => {
       // Close the chat window if the Escape key is pressed
       if (event.key === "Escape") {
         handleClose();
       }
     };
-  
+
     document.addEventListener("mousedown", handleOutsideClick);
     document.addEventListener("keydown", handleEscapeKey);
-  
+
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
       document.removeEventListener("keydown", handleEscapeKey);
     };
   }, []);
-  
 
   return (
     <>
-      <div className="fixed left-4 bottom-4 flex items-center justify-center overflow-hidden md:right-8 md:top-0 md:bottom-auto md:h-96 md:rounded-xl md:shadow-2xl">
+      
+      <div className="fixed left-4  flex items-center justify-center overflow-hidden md:right-8 md:top-0 md:bottom-auto md:h-96 md:rounded-xl md:shadow-2xl">
         {open && (
           <div
-            className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50"
+            className="fixed top-0 left-0 right-0 bottom-4 h-screen flex items-center justify-center bg-black bg-opacity-50"
             ref={chatRef}
           >
             <div className="bg-white rounded-lg p-8">
@@ -137,7 +136,9 @@ const ChatBot = ({ onExperienceClick }) => {
                   </button>
                 </Link>
               )}
-              <div className="flex justify-center mt-4"> {/* Updated to center the buttons */}
+              <div className="flex justify-center mt-4">
+                {" "}
+                {/* Updated to center the buttons */}
                 <button
                   onClick={handleRoleClick}
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
