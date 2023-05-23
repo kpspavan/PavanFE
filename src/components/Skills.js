@@ -27,10 +27,6 @@ const Skills = () => {
     { id: 8, src: materailui, title: "MaterailUI", style: "shadow-blue-500" },
     { id: 9, src: Docker, title: "Docker", style: "shadow-blue-500" },
     { id: 10, src: RactHookForm, title: "ReactHookForm", style: "shadow-blue-500" },
-
-
-
-
   ];
 
   const [hoveredSkill, setHoveredSkill] = useState(null);
@@ -47,7 +43,7 @@ const Skills = () => {
     <div name="experience" className=" py-8"  >
       <div className="max-w-screen-lg mx-auto p-4 text-white">
         <h1 className="text-4xl text-black font-bold border-b-4 flex justify-center border-gray-500 mb-6 dark:text-light ">Skills</h1>
-        <p className="text-center text-lg mb-12">These are the technologies I have worked with</p>
+        <p className="text-center text-2xl text-black font-bold flex justify-center border-gray-500  dark:text-light  mb-12">These are the technologies I have worked with</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8" id="skills"  >
           {tech.map(({ id, src, title, style }) => {
             const isHovered = hoveredSkill === title;
@@ -63,7 +59,7 @@ const Skills = () => {
                   <Image src={src} alt={title} layout="fill" objectFit="contain" />
                   {isHovered && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 transition-opacity duration-300 opacity-100">
-                      <p className="text-white text-xl">{title}</p>
+                      <p className="text-white sm:text-xs	 md:text-sm text-xl">{title}</p>
                     </div>
                   )}
                 </div>

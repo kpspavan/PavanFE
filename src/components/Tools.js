@@ -12,7 +12,7 @@ const Tools = () => {
     {
       id: 3,
       src: vscode,
-      title: "VisualStudioCode",
+      title: "Vscode",
       style: "shadow-orange-300",
     },
     { id: 4, src: jira, title: "Jira", style: "shadow-blue-300" },
@@ -36,7 +36,7 @@ const Tools = () => {
         <h1 className="text-4xl text-black font-bold border-b-4 flex justify-center border-gray-500 mb-6  dark:text-light ">
           Tools
         </h1>
-        <p className="text-center text-lg mb-12">
+        <p className="text-center text-lg   text-black font-bold  flex justify-center border-gray-500   dark:text-light  mb-12">
           These are the Few Tools I have worked with
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
@@ -59,7 +59,9 @@ const Tools = () => {
                   />
                   {isHovered && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 transition-opacity duration-300 opacity-100">
-                      <p className="text-white text-xl">{title}</p>
+                      <p className=" text-xl text-white sm:text-xs	 md:text-sm ">
+                        {title}
+                      </p>
                     </div>
                   )}
                 </div>
