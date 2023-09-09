@@ -1,14 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Layout from "@/components/Layout";
+import styles from "../styles/Home.module.css";
+import Layout from "../components/Layout";
 import profilePic from "../../public/images/profile/web.png";
-import AnimatedText from "@/components/AnimatedText";
+import AnimatedText from "../components/AnimatedText";
 import Link from "next/link";
-import { LinkArrow } from "@/components/icons";
+import { LinkArrow } from "../components/icons";
 import lightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
-import TransitionEffect from "@/components/TransitionEffect";
+import TransitionEffect from "../components/TransitionEffect";
 import React, { useEffect, useState } from 'react';
 import ContactForm from '../components/ContactForm'
 
