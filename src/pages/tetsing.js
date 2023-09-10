@@ -2,7 +2,7 @@ import React from 'react'
 
 const tetsing = () => {
   return (
-    <div>tetsingqwertirtithrithit</div>
+    <div>test</div>
   )
 }
 
