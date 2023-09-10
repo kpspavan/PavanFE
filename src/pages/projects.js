@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import AnimatedText from "@/components/AnimatedText";
+import AnimatedText from "../components/AnimatedText";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import project1 from '../../public/images/projects/home-lg-bg.png'
 
 
 import { motion } from "framer-motion";
-import TransitionEffect from "@/components/TransitionEffect";
+import TransitionEffect from "../components/TransitionEffect";
 import ScrollIndicator from '../components/ScrollIndicator'
 import ContactForm from '../components/ContactForm'
 
