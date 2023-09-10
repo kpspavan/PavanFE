@@ -103,7 +103,7 @@ const About = () => {
                 Biography
               </h2>
               <p className="font-medium ">
-                Hi, Im Pavan Srinivas.K, a Front End Developer  with a
+                Hi, Im Hemanth, a Front End Developer  with a
                 passion for creating beautiful, functional, and user-centered
                 digital experiences. With 1 years of experience in the field, I
                 am always looking for new and innovative ways to bring my
