@@ -20,7 +20,7 @@ const Skills = () => {
     { id: 1, src: html, title: "HTML5", style: "shadow-orange-300" },
     { id: 2, src: css, title: "CSS3", style: "shadow-blue-300" },
     { id: 3, src: javascript, title: "JavaScript", style: "shadow-orange-300" },
-    { id: 4, src: reactjs, title: "React", style: "shadow-blue-300" },
+    { id: 4, src: reactjs, title: "React.js", style: "shadow-blue-300" },
     { id: 5, src: tailwindcss, title: "Tailwind", style: "shadow-sky-300" },
     { id: 6, src: nextjs, title: "Next.js", style: "shadow-red-500" },
     { id: 7, src: chakra, title: "ChakraUI", style: "shadow-blue-500" },
